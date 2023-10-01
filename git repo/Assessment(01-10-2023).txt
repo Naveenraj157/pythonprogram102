@@ -1,0 +1,76 @@
+
+
+Question 1’s ,Answer:
+def checkpass(password):
+    upper_alp="QWERTYUIOPASDFGHJKLZXCVBNM" 
+    lower_alp="qwertyuiopasdfghjklzxcvbnm"
+    number_1="1234567890"
+    special_char="!@#$%^&*()"
+    if len(password)<8:
+        return False
+    if not any(char in upper_alp for char in password):
+        return False
+    if not any(char in lower_alp for char in password):
+        return False
+    if not any(char in number_1 for char in password):
+        return False
+    if not any(char in special_char for char in password):
+        return False
+    return True
+print(checkpass("Naveenraj@123"))
+
+
+Question 2’s answer:
+def attendance(record):
+    record_1=record.count('P')
+    record_2=(record_1/10)
+    if record_2>=0.7:
+        return('not suspended',record_2)
+    else:
+        return('suspended',record_2)
+print(attendance('P A A P A A A A P P'))
+
+
+Question 3’s answers:
+def ankit_max(marks_dict):
+    if len(marks_dict)<2:
+        return None
+    sort_marks=sorted(marks_dict.values(),reverse=True)
+    first_marks=sort_marks[0]
+    second_marks=sort_marks[1]
+    if first_marks==second_marks:
+        return None
+    for students,marks in marks_dict.items():
+        if marks==second_marks:
+            return students
+print(ankit_max({'Alok': 10, 'Bikash': 24, 'Chandan': 26, 'Dali': 28, 'Eli': 30}))
+
+
+
+Question 4’s answer:
+def multiple_of_3(number):
+    number_1=str(number)
+    update_num=[int(digi) for digi in number_1]
+    sum_num=sum(update_num)
+    if sum_num%3==0:
+        return True
+    else:
+        return False
+print(multiple_of_3(124))
+
+
+
+Question 5’s answer
+
+def deduplicate(arg):
+    output_value=''
+    previous_value=None
+    for char in arg:
+        if char!=previous_value:
+            output_value+=char
+        previous_value=char
+    return output_value
+arg=input()
+result=deduplicate(arg)
+print(result)
+
